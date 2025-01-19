@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 # Connection string for Azure SQL Database (ODBC Driver 18)
 DATABASE_URL = (
-    "mssql+pyodbc://noir:DHqofMEf4vWY4THANHpCiqWlh41BT7C59G3e6eeQGeUI29H0n@noir-sql-server.database.windows.net:1433/second-sunday"
+    "mssql+pyodbc://admin123:Password123@shop-ss.database.windows.net:1433/shop-db"
     "?driver=ODBC+Driver+18+for+SQL+Server&Encrypt=yes&TrustServerCertificate=no&ConnectionTimeout=30"
 )
 

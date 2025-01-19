@@ -11,7 +11,10 @@ router = APIRouter()
 def create_category(category: schemas.CategoryRequest, db: Session = Depends(get_db)):
     try:
         db_category = cruds.create_category(db=db, category=category)
-        return db_category
+        return {
+            "id": db_category.ID,
+            "name": db_category.NAME,
+        }
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -20,7 +23,10 @@ def create_category(category: schemas.CategoryRequest, db: Session = Depends(get
 def get_category(category_id: int, db: Session = Depends(get_db)):
     try:
         db_category = cruds.get_category(db=db, category_id=category_id)
-        return db_category
+        return {
+            "id": db_category.ID,
+            "name": db_category.NAME,
+        }
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 

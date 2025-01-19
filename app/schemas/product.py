@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional, List
+from .category import CategoryResponse
 
 
 class SizeBase(BaseModel):
@@ -15,7 +16,7 @@ class SizeResponse(SizeBase):
 class SizeRequest(SizeBase):
     pass
 
-
+ 
 class ColorBase(BaseModel):
     name: str
     images: Optional[List[str]]
@@ -46,6 +47,7 @@ class ProductRequest(ProductBase):
 class ProductResponse(ProductBase):
     id: int
     colors: List[ColorResponse]
+    category: Optional[CategoryResponse]
 
     class Config:
         from_attributes = True
